@@ -50,14 +50,13 @@ Feel free to explore the different sections of the website:
 
 ## Screenshots
 
-![Home Page](https://your-image-link.com/home.png)
-![Poster Projects](https://your-image-link.com/poster.png)
+![Home Page]([https://your-image-link.com/home.png](https://github.com/PavanSacharya/Portfolio-/blob/main/assets/Screenshot%202024-08-17%20220832.png))
 
 ## Contact
 
 If you have any questions or would like to collaborate, feel free to reach out:
 
-- **Email**: [pavan.sathish@example.com](mailto:pavasathisacharya@gmail.com)
+- **Email**: [Pavan Sathish Acharya](mailto:pavasathisacharya@gmail.com)
 - **LinkedIn**: [Pavan Sathish Acharya](https://www.linkedin.com/in/yourlinkedin/)
 
 ---
