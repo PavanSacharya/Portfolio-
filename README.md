@@ -3,7 +3,7 @@ Welcome to my personal portfolio website! This project showcases my work as a de
 
 ## Live Demo
 
-Check out the live demo of the website here: [Live Demo](https://your-portfolio-link.com)
+Check out the live demo of the website here: [Live Demo]((https://pavanacharya.vercel.app/))
 
 ## Introduction
 
@@ -50,14 +50,10 @@ Feel free to explore the different sections of the website:
 
 ## Screenshots
 
-![Home Page](https://github.com/PavanSacharya/Portfolio-/blob/main/assets/Screenshot%202024-08-17%20220832.png))
+![Home Page](https://github.com/PavanSacharya/Portfolio-/blob/main/assets/Screenshot%202024-08-17%20220832.png)
 
-## Contact
 
-If you have any questions or would like to collaborate, feel free to reach out:
 
-- **Email**: [Pavan Sathish Acharya](mailto:pavasathisacharya@gmail.com)
-- **LinkedIn**: [Pavan Sathish Acharya](https://www.linkedin.com/in/yourlinkedin/)
 
 ---
 
