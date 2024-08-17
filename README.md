@@ -3,7 +3,7 @@ Welcome to my personal portfolio website! This project showcases my work as a de
 
 ## Live Demo
 
-Check out the live demo of the website here: [Live Demo]((https://pavanacharya.vercel.app/))
+Check out the live demo of the website here:[Live Demo](https://pavanacharya.vercel.app/)
 
 ## Introduction
 
