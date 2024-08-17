@@ -1,0 +1,787 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Designer+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600;700&display=swap');
+@import url('https://www.dafont.com/css?family=act+of+rejection&display=swap');
+
+
+
+
+@font-face {
+    font-family: 'Designer2';
+    src: url('/fonts/designer2.woff2') format('woff2'),
+         url('/fonts/designer2.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+::-webkit-scrollbar {
+    width: 0px; /* Width of the scrollbar */
+    height: 5px;
+    color: #000;
+}
+
+::-webkit-scrollbar-track {
+    background: #ff050500; /* Track background color */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #030c00; /* Scrollbar color */
+    border-radius: 10px; /* Round the corners of the scrollbar */
+    box-sizing: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000; /* Color when hovering over the scrollbar */
+}
+
+.navbar {
+    position: fixed;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 5%;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #fff;
+    border-radius: 50px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;  /* Ensure the nav spans the full width of the navbar */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    padding: 100px 20px;
+    min-height: 50vh;
+}
+
+.section-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("assets/back.png") no-repeat center center/cover;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+}
+
+.intro-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0%;
+    font-size: 3rem;
+    color: #ffffff;
+    gap: 8%;
+    padding-bottom: 20%;
+}
+
+#home .intro-left p.intro-main2 {
+    font-family: 'Red Rose', sans-serif;
+    font-size: 120%;
+    color: #d307f7;
+    padding-left: 10%;
+    word-spacing: 40%;
+    line-height: 50%;
+    padding-top: 45%;
+    
+}
+
+#home .intro-left h1.intro-main {
+    font-family: 'Red Rose', sans-serif;
+    font-size: 110%;
+    margin: 20px 0; 
+    line-height: 1.2; 
+    padding-left: 10%;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+#home .intro-left h1.intro-main4 {
+    color: #00fbdd;
+}
+
+#home .intro-left .intro-details {
+    font-family: 'Georgia', serif;
+    font-size: 15px;
+    color: #d307f7;
+    text-align: left;
+    padding-left: 10%;
+    margin-top: 1px;
+}
+
+.intro-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-imagess {
+    height: 60%;
+    width: 60%;
+    border-radius: 10px;
+    padding-bottom: 15%;
+    cursor: grab;
+}
+
+.section-about, .section-projects {
+    background: #f4f4f4;
+}
+
+
+
+@media (max-width: 768px) {
+    .section-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro-left, .intro-right {
+        margin: 1rem 0;
+    }
+}
+
+.intro-image {
+    cursor: grab;
+    transition: transform 0.2s ease; /* Smooth transition for the rotation */
+}
+
+/* Main section styling */
+.section-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("assets/back11.png") no-repeat center center/cover;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
+
+/* Image styling */
+.intro-images {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 15%;
+}
+/* 3rd section */
+
+.section-about {
+    background: url("assets/back111.png");
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: flex-start; /* Align children to the top */
+    align-items: center; /* Center children horizontally */
+}
+
+.swiper-containers {
+    width: 80vh; /* Set the width to 100% of the parent container */
+    height: 80vh; /* Set the height to 80% of the viewport height */
+    padding-top: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: contain; /* Ensure the entire image is visible */
+    background-repeat: no-repeat; /* Prevent repetition of the image */
+    width: 500px;
+    height: 500px;
+}
+
+/*text style*/
+.intro-left1 {
+    width: 100%;
+    display: flex;
+    /*justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Align the text vertically at the top */
+    margin-bottom: 20px; /* Space between the text and the swiper container */
+    padding-top: 1%;
+    padding-left: 4%;
+    padding-right: 9%;
+}
+
+.intro-left1 h1.intro-main {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 3rem; /* Adjust font size as needed */
+    margin: 0;
+    color: #ffffff;
+    font-style: oblique;
+    padding-left: 15%;
+    text-decoration:underline;
+}
+/*4th section*/
+
+.section-projectsimages {
+    background: url("assets/back111.png");
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+    padding-right: 6.5%;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%; /* Ensure it takes full width of the parent section */
+    height: 100%; /* Ensure it takes full height of the parent section */
+}
+
+.text-section {
+    flex: 1; /* Allow this section to grow and take available space */
+    display: flex;
+    justify-content: left; /* Center content horizontally within the container */
+    align-items: center; /* Center content vertically */
+}
+
+.intro-main1 {
+    font-family: 'act+of+rejection', sans-serif;
+    font-size: 30px; /* Adjust font size as needed */
+    color: #D3D3D3;
+    font-style: oblique;
+    margin: 0; /* Remove default margins */
+    text-align: left; /* Align text to the left */
+    padding-left: 4%;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+}
+
+.intro-images2 {
+    width:40%;
+    height: 80%;
+    border-radius: 3%;
+    display: block; /* This is optional since img is block by default */
+    padding-bottom: 0%;
+     align-items: center;
+     margin-left: 6%;
+   
+}
+
+
+
+
+
+
+/* figma progect*/
+
+.section-project {
+    background: url("assets/back111.png");
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 190vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding-left: -1%;
+}
+
+.intro-left1 {
+    text-align: center; /* Center text horizontally */
+    margin-bottom: 10px; /* Space between the heading and the portfolio section */
+    padding-left: 30%
+    
+    
+}
+
+.intro-left1 h1.intro-main {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3rem; /* Adjusted font size */
+    margin: 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center; /* Align text and logo vertically */
+    justify-content: center; /* Center text and logo horizontally */
+
+}
+
+.intro-left1 h1.intro-main .figma-logo {
+    margin-left: 10px; /* Space between text and logo */
+    height: 50px; /* Adjust logo size as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.portfolio {
+    gap: 10%;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between containers */
+    padding: 40 10px; /* Add some horizontal padding */
+    padding-bottom: 4%;
+}
+
+.container {
+    background-color: #1F2937;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    width: 100%;
+    max-width: 300px; /* Ensure containers do not exceed a certain width */
+}
+
+.container:hover {
+    transform: scale(1.05);
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.container:hover .image img {
+    transform: scale(1.1);
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #EEEDEB;
+}
+
+p {
+    font-size: 1em;
+    margin: 10px 0;
+    color: #EEEDEB;
+}
+
+.tags {
+    margin: 10px 0;
+}
+
+.tags span {
+    background-color: #374151;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    display: inline-block;
+    color: #ffffff;
+}
+.behance-logo {
+    width: 40px; /* Adjust the width as needed */
+    height: 40; /* Maintain aspect ratio */
+}
+
+.behance {
+    display: inline-block; /* Optional: ensures the link fits around the image */
+    margin: 10px; /* Optional: adds space around the Behance link */
+}
+
+a {
+    text-decoration: none;
+    color: #3B82F6;
+    margin: 10px 5px;
+    display: inline-block;
+}
+
+a.live {
+    background-color: #3B82F6;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/*6th section*/
+.about_section {
+    
+    background: url("assets/back111.png");
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between text and image */
+    
+}
+/*dummy*/
+.dummy{
+    background: url("assets/back111.png");
+
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+    display: flex;
+
+   
+
+}
+
+/* About Section */
+.about_sections {
+    background: url("assets/back111.png") no-repeat center center/cover;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 130vh;
+    display: flex;
+    flex-direction: column; /* Align content in a column */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .abouts {
+        padding: 0 5%; /* Adjust padding for smaller screens */
+        margin-top: 30%;
+    }
+}
+
+/* About Heading */
+.abouts h1.intro-main1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3em; /* Adjusted font size */
+    margin: 0; /* Remove extra margin */
+    color: #ffffff;
+    display: flex;
+    align-items: center; /* Align text and logo vertically */
+    justify-content: center; /* Center text and logo horizontally */
+    gap: 10px; /* Space between text and logo */
+    text-decoration: underline;
+}
+
+/* Figma Logo */
+.abouts h1.intro-main1 .figma-logo {
+    height: 120px; /* Adjust logo size as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* About Paragraph */
+.p1 {
+    font-size: 2.1em;
+    margin: 20px 0; /* Added some margin for better spacing */
+    color: #EEEDEB;
+    text-align: center; /* Center text horizontally */
+    margin-left: 10%;
+    margin-right: 10%;
+    justify-self: start;
+}
+
+/* Skill Container */
+.skill-container {
+    display: flex;
+    justify-content: center; /* Center the skill buttons horizontally */
+    gap: 20px;
+    width: 100%; /* Take up full width */
+    height: 30%;
+    margin-top: 20px; /* Add space above the skill container */
+    padding: 20px; /* Add padding around the container */
+    
+}
+
+.skill-container1 {
+    display: flex;
+    justify-content: center; /* Center the skill buttons horizontally */
+    gap: 20px;
+    width: 100%; /* Take up full width */
+    height: 30%;
+    margin-top: -25px; /* Add space above the skill container */
+    padding: 20px; /* Add padding around the container */
+    
+}
+.skill-container2 {
+    display: flex;
+    justify-content: center; /* Center the skill buttons horizontally */
+    gap: 20px;
+    width: 100%; /* Take up full width */
+    height: 30%;
+    margin-top: -65px; /* Add space above the skill container */
+    padding: 20px; /* Add padding around the container */
+    
+}
+
+.skill-container3 {
+    display: flex;
+    justify-content: center; /* Center the skill buttons horizontally */
+    gap: 20px;
+    width: 100%; /* Take up full width */
+    height: 30%;
+    margin-top: -100px; /* Add space above the skill container */
+    padding: 20px; /* Add padding around the container */
+    
+}
+
+.skill-container4 {
+    display: flex;
+    justify-content: center; /* Center the skill buttons horizontally */
+    gap: 20px;
+    width: 100%; /* Take up full width */
+    height: 30%;
+    margin-top: -130px; /* Add space above the skill container */
+    padding: 20px; /* Add padding around the container */
+    
+}
+
+
+/* Skill Button */
+.skill-button {
+    background-color: #000; /* Black background for the buttons */
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #444; /* Subtle border */
+    transition: border-color 0.3s; /* Smooth border transition */
+    
+}
+
+/* Skill Button Logo */
+.skill-button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Skill Button Text */
+.skill-button span {
+    color: #fff; /* White text */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+   
+}
+
+/* Hover Effect for Skill Button */
+.skill-button:hover {
+    border-color: #ffffff; /* White border on hover */
+}
+
+/*my detils*/
+.detail {
+    background: url("assets/back111.png") no-repeat center center/cover;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    height: 50vh; /* 50% of viewport height */
+    display: flex; /* Ensure flex properties work */
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px; /* Optional: Add padding for internal spacing */
+    margin: 0; /* Remove any margin */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+.myname {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: left; /* Center items vertically */
+    text-align:left; /* Ensure text alignment is centered */
+    padding-left: 3.5%;
+    padding-bottom: 20%;
+}
+
+.myname p {
+    font-family: 'Arial', sans-serif; /* Clean, sans-serif font */
+    font-size: 3em; /* Large font size for the paragraph */
+    color: #ffffff; /* White color for the text */
+    margin: 0; /* Remove margin to avoid unwanted spacing */
+    align-items: center;
+    align-content: center;
+   
+}
+
+.myname p1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.6em;
+    color: #fffb00;
+    padding-left: 10%;
+}
+.myname p2 {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    font-size: 1em;
+    
+}
+/*conatct*/
+
+.contact {
+
+        background: url("assets/back111.png") no-repeat center center/cover;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        height: 3%; /* 50% of viewport height */
+        display: flex; /* Ensure flex properties work */
+        align-items: flex-start; /* Align items to the top */
+        padding: 20px; /* Optional: Add padding for internal spacing */
+        margin: 0; /* Remove any margin */
+        box-sizing: border-box; /* Include padding in element's total width and height */
+        align-items: flex-start; 
+
+    }
+
+    .contact1 {
+
+    
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        height: 0.1%; /* 50% of viewport height */
+        align-items: flex-start; /* Align items to the top */
+        padding: 20px; /* Optional: Add padding for internal spacing */
+        margin: 0; /* Remove any margin */
+      
+        align-self: start;
+        padding-top: 1%;
+        gap: 20px;
+        padding-left: 3%;
+        padding-right: 5%;
+    }
+    .contact2 {
+
+        background: url("assets/back2.png") no-repeat center center/cover;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        height: 0.1%; /* 50% of viewport height */
+        display: flex; /* Ensure flex properties work */
+        align-items: flex-start; /* Align items to the top */
+        padding: 20px; /* Optional: Add padding for internal spacing */
+        margin: 0; /* Remove any margin */
+        box-sizing: border-box; /* Include padding in element's total width and height */
+        align-self: start;
+        padding-top: 1%;
+        padding-bottom: 8%;
+
+    }
+
+    section {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically (if section has a height) */
+        height: 100vh; /* Optional: adjust based on your design */
+    }
+    .intro-left2 {
+        font-family: 'Audiowide', sans-serif;
+        font-size: 1.6rem; /* Adjust font size as needed */
+        align-items: center;
+        margin-left: -17%;
+        color: #ffffff;
+        font-style: oblique;
+        padding-left: 15%;
+        text-decoration:underline;
+    }
+    .contact1 {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .content {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .behance-logo {
+        width: 50px; /* Adjust size as needed */
+        height: 50px; /* Maintain aspect ratio */
+       
+    }
+    .behance-logo1 {
+        width: 42px; /* Adjust size as needed */
+        height: 39px; /* Maintain aspect ratio */
+        padding-top: 11%;
+       
+       
+    }
+    .behance-logo2 {
+        width: 50px; /* Adjust size as needed */
+        height: 50px; /* Maintain aspect ratio */
+        flex-wrap: wrap; /* Allows items to wrap onto new lines */
+       
+    }
+    .behance-logo3 {
+        width: 48px; /* Adjust size as needed */
+        height: 48px; /* Maintain aspect ratio */
+       
+       
+    }
+    .behance-logo4 {
+        width: 40px; /* Adjust size as needed */
+        height: 39px; /* Maintain aspect ratio */
+        padding-top: 9%;
+       
+    }
+
+    .behance-logo5 {
+        width: 60px; /* Adjust size as needed */
+        height: 39px; /* Maintain aspect ratio */
+        padding-top: 9%;
+       
+    }
+    .footer {
+        text-align: center;
+        padding: 0.1rem;
+        background: url("assets/back111.png")
+        
+    }
