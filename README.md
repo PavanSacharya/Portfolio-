@@ -1,20 +1,9 @@
-# Pavan Sathish Acharya's Portfolio Website
 
 Welcome to my personal portfolio website! This project showcases my work as a designer and developer. The website is built using HTML, CSS, JavaScript, and Spline. It includes sections for Home, About, Poster Projects, and Contact.
 
 ## Live Demo
 
 Check out the live demo of the website here: [Live Demo](https://your-portfolio-link.com)
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contact](#contact)
 
 ## Introduction
 
@@ -68,9 +57,8 @@ Feel free to explore the different sections of the website:
 
 If you have any questions or would like to collaborate, feel free to reach out:
 
-- **Email**: [pavan.sathish@example.com](mailto:pavan.sathish@example.com)
+- **Email**: [pavan.sathish@example.com](mailto:pavasathisacharya@gmail.com)
 - **LinkedIn**: [Pavan Sathish Acharya](https://www.linkedin.com/in/yourlinkedin/)
-- **Instagram**: [ArtSoul](https://www.instagram.com/artsoul)
 
 ---
 
