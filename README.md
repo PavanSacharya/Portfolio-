@@ -50,7 +50,7 @@ Feel free to explore the different sections of the website:
 
 ## Screenshots
 
-![Home Page]([https://your-image-link.com/home.png](https://github.com/PavanSacharya/Portfolio-/blob/main/assets/Screenshot%202024-08-17%20220832.png))
+![Home Page](https://github.com/PavanSacharya/Portfolio-/blob/main/assets/Screenshot%202024-08-17%20220832.png))
 
 ## Contact
 
