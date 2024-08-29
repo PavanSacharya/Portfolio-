@@ -792,19 +792,19 @@ a.live {
 @media only screen and (max-width: 768px) {
     .navbar {
         width: 60%; /* Make the navbar span the full width of the screen */
-        top:2; /* Position the navbar at the top */
+        top:1.5; /* Position the navbar at the top */
         height: 3%; /* Adjust height based on content */
         padding: 0.3rem; /* Add padding */
         border-radius:0%; /* Remove border-radius for a simpler look */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
         overflow-x: auto; /* Enable horizontal scrolling if needed */
         white-space: nowrap; /* Prevent wrapping of navbar items */
+        margin: 0 0.5rem;
     }
 
     .navbar nav {
         display: flex;
         flex-direction: row; /* Align items horizontally */
-        width: auto; /* Adjust width based on content */
+        width: 2%; /* Adjust width based on content */
         align-items: center; /* Center items vertically */
     }
 
@@ -814,7 +814,7 @@ a.live {
         padding: 0;
         margin: 0;
         list-style: none;
-        white-space: nowrap; /* Prevent wrapping of list items */
+        white-space:1px; /* Prevent wrapping of list items */
     }
 
     .nav-list li {
@@ -825,55 +825,60 @@ a.live {
         display:block; /* Make links block elements for better touch targets */
         padding: 0.5rem 0.75rem; /* Adjust padding for smaller screens */
         font-size: 0.4rem; /* Reduce font size for smaller screens */
+        padding: 0.3rem;
     }
 }
 
 /* first  page*/
+/* Styles for mobile screens */
 @media only screen and (max-width: 768px) {
-    .main-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; /* Stack content vertically */
-        width: 100%; /* Make the section take full width */
-    }
-
     .section-intro {
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        text-align: center; /* Center text */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem; /* Reduce padding for mobile */
+        height: 40%;
     }
 
     .intro-left, .intro-right {
-        width: 70%; /* Make each div span 70% of the width */
-        margin-bottom: 1rem; /* Add space between elements */
+        width: 100%;
+        margin-bottom: 1rem; /* Add margin between sections */
+        align-items:center;
     }
 
     .intro-main2 {
-        font-size: 1px; /* Set font size to 2px for "Hello, I'm" text */
-        align-self: flex-start; /* Align the content to the left */
-        margin-left: 0; /* Remove any default margin */
+        font-size: 0.8rem !important; /* Force font size for mobile */
+        margin: 0;
     }
 
     .intro-main {
-        font-size: 1rem; /* Smaller font size */
+        font-size: 1rem !important; /* Force font size for mobile */
+        margin: 0.5rem 0;
     }
 
     .intro-details {
-        font-size: 0.9rem; /* Smaller font size */
-        margin-top: 0.5rem; /* Add space above text */
+        font-size: 0.6rem !important; /* Force font size for mobile */
     }
 
     .intro-imagess {
-        width: 80%; /* Resize image to fit smaller screens */
+        width: 40%; /* Resize image for mobile */
+        height: 60%;
+    
+    }.intro-imagess {
+        width: 100%;
         height: auto; /* Maintain aspect ratio */
-        max-width: 300px; /* Set a max-width for better control */
-        padding-top: -5%;
+        max-width: 400px; /* Max-width for larger screens */
+    }
+    
+    /* Styles for mobile screens */
+    @media only screen and (max-width: 768px) {
+        .intro-right {
+            display: none; /* Hide the image container on mobile */
+        }
     }
 }
 
-
+/*dummy image*/
 @media only screen and (max-width: 768px) {
     .section-main {
         display: flex;
@@ -897,6 +902,7 @@ a.live {
     }
 }
 
+/*posterimage*/
 
 @media only screen and (max-width: 768px) {
     .section-about {
