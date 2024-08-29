@@ -789,7 +789,7 @@ a.live {
 
    /** responsive mobile phone */
 /* Mobile screen styles */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     .navbar {
         width: 60%; /* Make the navbar span the full width of the screen */
         top:1.5; /* Position the navbar at the top */
@@ -831,7 +831,7 @@ a.live {
 
 /* first  page*/
 /* Styles for mobile screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     .section-intro {
         flex-direction: column;
         align-items: center;
@@ -879,7 +879,7 @@ a.live {
 }
 
 /*dummy image*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     .section-main {
         display: flex;
         justify-content: center;
@@ -905,7 +905,7 @@ a.live {
 
 /*posterimage*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     .section-about {
         display: flex;
         justify-content: center;
@@ -952,7 +952,7 @@ a.live {
 }
 /*dummy image*/
 /* Styles for mobile screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     .section-projectsimages {
         padding: 1rem; /* Reduce padding for mobile */
         height: 70vh; 
@@ -981,7 +981,7 @@ a.live {
 /*projetc*/
 
 /* Styles for mobile screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 400px) {
     .section-project {
         display: flex;
         flex-direction: column; /* Stack containers vertically */
@@ -1002,14 +1002,15 @@ a.live {
 }
 
 /*dumy*/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 400px) {
     .dummy {
         height: -100%;
        
     }
+}
 
 /*about*/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 400px) {
     .about_sections {
         padding: 0.5rem; /* Further reduce padding for very small screens */
         height: 50%;
@@ -1028,5 +1029,36 @@ a.live {
 
     .p1 {
         font-size: 0.7rem; /* Further reduce font size for paragraphs */
+    }
+}
+/*skills and all*/
+@media only screen and (max-width: 400px) {
+    .skill-container, .skill-container3 {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .skill-button {
+        margin: 0.5rem 0; /* Add vertical spacing between skill buttons */
+    }
+
+    .skill-button img {
+        width: 40px; /* Further reduce icon size */
+        height: 40px; /* Further reduce icon size */
+    }
+
+    .skill-button span {
+        font-size: 0.7rem; /* Further reduce text size */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .skill-button img {
+        width: 30px; /* Even smaller icon size */
+        height: 30px; /* Even smaller icon size */
+    }
+
+    .skill-button span {
+        font-size: 0.6rem; /* Even smaller text size */
     }
 }
