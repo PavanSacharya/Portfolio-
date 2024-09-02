@@ -791,10 +791,7 @@ a.live {
     }
 
 
-
-
-    
-   /** responsive mobile phone */
+       /** responsive mobile phone */
 /* Mobile screen styles */
 @media only screen and (max-width: 480px) {
     .navbar {
@@ -837,16 +834,25 @@ a.live {
 }
 
 /* first  page*/
-/* Styles for mobile screens */
+
 @media only screen and (max-width: 480px) {
     .section-intro {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         padding: 1rem; /* Reduce padding for mobile */
         width: 100%; /* Make the section take full width */
         height: 60vh;
+    
+        /* Background image properties */
+        background-image: url('assets/back.png'); /* Replace with your image URL */
+        background-size: cover; /* Ensures the background image covers the entire section */
+        background-position: center; /* Center the background image */
+        background-repeat: no-repeat; /* Prevent the background image from repeating */
+        background-attachment: fixed; /* Keeps the background image fixed while scrolling */
     }
+    
 
     .intro-left, .intro-right {
         width: 100%;
@@ -883,193 +889,5 @@ a.live {
         .intro-right {
             display: none; /* Hide the image container on mobile */
         }
-    }
-}
-
-/*dummy image*/
-@media only screen and (max-width: 480px) {
-    .section-main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; /* Stack content vertically */
-        width: 100%; /* Make the section take full width */
-        height: 60vh;
-    }
-
-    .section-main .section {
-        width: 100%; /* Ensure the inner container spans the full width */
-        text-align: center; /* Center the content within the section */
-        padding: 0; /* Remove any inner padding */
-    }
-
-    .intro-images {
-        width: 50%; /* Reduce the image size on mobile screens */
-        max-width: 200px; /* Limit the maximum width of the image */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 auto; /* Center the image within its container */
-    }
-}
-
-/*posterimage*/
-
-@media only screen and (max-width: 480px) {
-    .section-about {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; /* Stack content vertically */
-        width: 100%; /* Make the section take full width */
-        height: 60vh;
-    }
-
-    .intro-left1 {
-        text-align: center; /* Center the text container */
-        
-    }
-
-    .intro-left1 .intro-main {
-        font-size: 1rem; /* Set a smaller font size for mobile devices */
-        margin: 0; /* Remove any default margin */
-        line-height: 1.2; /* Adjust line height for better readability */
-    }
-
-    .swiper-containers {
-        width: 100%;
-        max-width: 70%;
-        overflow: hidden; /* Ensure no overflow outside the container */
-    }
-
-    .swiper-wrapper {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .swiper-slide {
-        width: 90%; /* Make the slides take up most of the screen width */
-        height: auto; /* Let height adjust automatically */
-        background-size: contain; /* Contain the image within the slide */
-        background-position: center;
-        background-repeat: no-repeat;
-        margin: 0 auto;
-    }
-
-    .swiper-paginations {
-        margin-top: 1rem;
-    }
-}
-/*dummy image*/
-/* Styles for mobile screens */
-@media only screen and (max-width: 480px) {
-    .section-projectsimages {
-        padding: 1rem; /* Reduce padding for mobile */
-        height: 70vh; 
-    }
-
-    .content-wrapper {
-        width: 100%; /* Full width for mobile screens */
-        padding: 0; /* Remove padding for mobile screens */
-    }
-
-    .text-section {
-        margin-bottom: 0.5rem; /* Reduce space below the text section */
-    }
-
-    .image-section {
-        width: 100%; /* Full width for the image section */
-    }
-
-    .intro-images2 {
-        width: 50%; /* Make the image fit within the container */
-        max-width: 50%; /* Ensure the image doesn't exceed the container width */
-        height: 30%;
-    }
-}
-
-/*projetc*/
-
-/* Styles for mobile screens */
-@media only screen and (max-width: 480px) {
-    .section-project {
-        display: flex;
-        flex-direction: column; /* Stack containers vertically */
-        align-items: center; /* Center containers horizontally */
-        padding: 1rem; /* Adjust padding for mobile */
-    }
-
-    .container {
-        flex: 1 1 100%; /* Each container takes full width on mobile */
-        max-width: 50%; /* Ensure container does not exceed viewport width */
-        margin-bottom: 1rem; /* Add space below each container */
-    }
-
-    /* Hide all containers except the first three */
-    .container:nth-of-type(n+4) {
-        display: none; /* Hide all containers starting from the 4th one */
-    }
-}
-
-/*dumy*/
-@media only screen and (max-width: 480px) {
-    .dummy {
-        height: -100%;
-       
-    }
-}
-
-/*about*/
-@media only screen and (max-width: 480px) {
-    .about_sections {
-        padding: 0.5rem; /* Further reduce padding for very small screens */
-        height: 50%;
-       
-    }
-
-    .intro-main1 {
-        font-size: 1rem; /* Even smaller font size for headings */
-        margin-top: -2%;
-    }
-
-    .figma-logo {
-        width: 10px; /* Further reduce size of the logo image */
-        margin: 0 0.2rem; /* Adjust space between text and images */
-    }
-
-    .p1 {
-        font-size: 0.7rem; /* Further reduce font size for paragraphs */
-    }
-}
-/*skills and all*/
-@media only screen and (max-width: 768px) {
-    /* Skill Container */
-    .skill-container,
-    .skill-container1,
-    .skill-container2,
-    .skill-container3,
-    .skill-container4 {
-        flex-direction: column; /* Stack skill buttons vertically */
-        gap: 15px; /* Reduce the gap between buttons */
-        height: auto; /* Adjust the height to fit content */
-        width: 80%; /* Make the container smaller */
-        margin: 10px auto; /* Center the container */
-        padding: 10px; /* Reduce padding for mobile */
-    }
-
-    /* Skill Button */
-    .skill-button {
-        padding: 8px 15px; /* Reduce padding */
-        border-radius: 20px; /* Slightly smaller border-radius */
-        transition: border-color 0.3s;
-    }
-
-    /* Skill Button Logo */
-    .skill-button img {
-        width: 15px;
-        height: 15px; /* Smaller icon size for mobile */
-    }
-
-    /* Skill Button Text */
-    .skill-button span {
-        font-size: 14px; /* Smaller font size for mobile */
     }
 }
