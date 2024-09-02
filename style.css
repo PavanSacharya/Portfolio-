@@ -53,7 +53,7 @@ body {
 }
 
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 4%;
     left: 50%;
     transform: translateX(-50%);
@@ -493,6 +493,10 @@ a.live {
     text-align: center;
 }
 
+
+
+
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .abouts {
@@ -787,6 +791,9 @@ a.live {
     }
 
 
+
+
+    
    /** responsive mobile phone */
 /* Mobile screen styles */
 @media only screen and (max-width: 400px) {
@@ -838,6 +845,7 @@ a.live {
         text-align: center;
         padding: 1rem; /* Reduce padding for mobile */
         height: 40%;
+        width: 100%;
     }
 
     .intro-left, .intro-right {
@@ -887,6 +895,7 @@ a.live {
         flex-direction: column; /* Stack content vertically */
         width: 100%; /* Make the section take full width */
         height: 5vh;
+        width: 100%;
     }
 
     .section-main .section {
