@@ -31,9 +31,9 @@ body {
     
 }
 
-/* Custom scrollbar styles for WebKit browsers */
+/*  scrollbar styles  */
 ::-webkit-scrollbar {
-    width: 0px; /* Width of the scrollbar */
+    width: 0px; 
     height: 5px;
     color: #000;
 }
@@ -204,7 +204,7 @@ body {
 
 /* Image styling */
 .intro-images {
-    width: 70%;
+    width: 60%;
     height: auto;
     border-radius: 5px;
     margin-left: 15%;
@@ -795,12 +795,75 @@ a.live {
   
    /** responsive mobile phone */
 /* Mobile screen styles */
-@media only screen and (max-width: 480px) {
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media queries for screens up to 768px (Tablets and Mobile Phones) */
+@media (max-width: 768px) {
+    .section-main {
+        background-size: cover;
+        height: 60vh; /* Adjust the height to fit smaller screens */
+        padding: 0; /* Add padding to prevent content from sticking to edges */
+    }
+
+    .intro-left, .intro-right {
+        text-align: center; /* Center content on smaller screens */
+        padding: 0; /* Remove padding for mobile */
+    }
+
+    .intro-left h1, .intro-left p {
+        font-size: 1.5rem; /* Adjust font size for readability */
+    }
+
+    .intro-images {
+        width: 80%; /* Reduce image width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
     .navbar {
-        width: 60%; /* Make the navbar span the full width of the screen */
+        width: 90%; /* Stretch navbar to fit screen */
+        height: auto;
+    }
+
+    .nav-list li {
+        margin: 0 0.5rem;
+    }
+
+    .nav-list li a {
+        font-size: 1rem; /* Reduce text size */
+    }
+
+    .section-intro, .section-main {
+        background-size: cover; /* Ensure background covers the entire section on mobile */
+        width: 100%; /* Ensure full width */
+    }
+
+    .intro-left {
+        padding: 1rem; /* Adjust padding for mobile */
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+    /* Styles for the main element */
+    main {
+        width: 100%; /* Full width on mobile phones */
+        padding: 0; /* Remove padding for consistency */
+        height: auto; /* Let height adjust to content on mobile */
+    }
+}
+
+
+
+/*navigation bar*/
+@media only screen and (max-width: 768px) {
+    .navbar {
+        width: 50%; /* Make the navbar span the full width of the screen */
         top:1.5; /* Position the navbar at the top */
         height: 3%; /* Adjust height based on content */
-        padding: 0.3rem; /* Add padding */
+        padding: 0.2rem; /* Add padding */
         border-radius:0%; /* Remove border-radius for a simpler look */
         overflow-x: auto; /* Enable horizontal scrolling if needed */
         white-space: nowrap; /* Prevent wrapping of navbar items */
@@ -820,62 +883,70 @@ a.live {
         padding: 0;
         margin: 0;
         list-style: none;
-        white-space:1px; /* Prevent wrapping of list items */
+        white-space:0.5px; /* Prevent wrapping of list items */
     }
 
     .nav-list li {
-        margin: 0 0.5rem; /* Adjust margin for spacing */
+        margin: 0 0.2rem; /* Adjust margin for spacing */
     }
 
     .nav-list li a {
         display:block; /* Make links block elements for better touch targets */
-        padding: 0.5rem 0.75rem; /* Adjust padding for smaller screens */
+        padding: 0.2rem 0.65rem; /* Adjust padding for smaller screens */
         font-size: 0.4rem; /* Reduce font size for smaller screens */
-        padding: 0.3rem;
+        padding: 0rem;
     }
 }
 
 /* first  page*/
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .section-intro {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem; /* Reduce padding for mobile */
-        width: 100%; /* Make the section take full width */
-        height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 60vh;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
     }
+
 
     .intro-left, .intro-right {
         width: 100%;
-        margin-bottom: 1rem; /* Add margin between sections */
+        margin-bottom: 10rem; /* Add margin between sections */
         align-items:center;
     }
 
-    .intro-main2 {
-        font-size: 0.8rem !important; /* Force font size for mobile */
-        margin: 0;
-    }
+   
 
-    .intro-main {
-        font-size: 1rem !important; /* Force font size for mobile */
-        margin: 0.5rem 0;
-    }
+/* Specific styles for font sizes */
+.intro-main2 {
+    font-size: 0.7rem !important; /* Font size for mobile */
+  align-items: center;
+}
 
-    .intro-details {
-        font-size: 0.6rem !important; /* Force font size for mobile */
-    }
+.intro-main {
+    font-size: 0.9rem !important; /* Font size for mobile */
+    justify-content: center;
+    margin-left: 9%;
+    align-items: center;
+ 
+   
 
-    .intro-imagess {
-        width: 40%; /* Resize image for mobile */
-        height: 60%;
-    
-    }.intro-imagess {
-        width: 100%;
-        height: auto; /* Maintain aspect ratio */
-        max-width: 400px; /* Max-width for larger screens */
-    }
+}
+
+.intro-details {
+    font-size: 0.5rem !important; /* Font size for mobile */
+    align-items: center;
+   
+}
+
     
     /* Styles for mobile screens */
     @media only screen and (max-width: 768px) {
@@ -886,14 +957,16 @@ a.live {
 }
 
 /*dummy image*/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .section-main {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; /* Stack content vertically */
         width: 100%; /* Make the section take full width */
         height: 60vh;
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
     }
 
     .section-main .section {
@@ -912,24 +985,26 @@ a.live {
 
 /*posterimage*/
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .section-about {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; /* Stack content vertically */
         width: 100%; /* Make the section take full width */
         height: 60vh;
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
     }
 
     .intro-left1 {
         text-align: center; /* Center the text container */
+    
         
     }
 
-    .intro-left1 .intro-main {
+     .intro-main {
         font-size: 1rem; /* Set a smaller font size for mobile devices */
-        margin: 0; /* Remove any default margin */
         line-height: 1.2; /* Adjust line height for better readability */
     }
 
@@ -959,10 +1034,13 @@ a.live {
 }
 /*dummy image*/
 /* Styles for mobile screens */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .section-projectsimages {
         padding: 1rem; /* Reduce padding for mobile */
         height: 100vh; 
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
     }
 
     .content-wrapper {
@@ -988,13 +1066,13 @@ a.live {
 /*projetc*/
 
 /* Styles for mobile screens */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .section-project {
         display: flex;
-        flex-direction: column; /* Stack containers vertically */
-        align-items: center; /* Center containers horizontally */
-        padding: 1rem; /* Adjust padding for mobile */
-        padding-top: 50%;
+        align-items: center; /* Center containers horizontally */;
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
     }
 
     .container {
@@ -1025,35 +1103,47 @@ a.live {
 }
 
 /*dumy*/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     .dummy {
         height: -100%;
+        display: none;
        
     }
 }
 
-/*about*/
-@media only screen and (max-width: 480px) {
+/* General mobile styles */
+@media only screen and (max-width: 768px) {
     .about_sections {
-        padding: 0.5rem; /* Further reduce padding for very small screens */
+        padding: 0rem; /* Adjust padding */
         height: 50%;
-       
+        display: flex;
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
     }
 
-    .intro-main1 {
-        font-size: 1rem; /* Even smaller font size for headings */
-        margin-top: -2%;
-    }
-
-    .figma-logo {
-        width: 10px; /* Further reduce size of the logo image */
-        margin: 0 0.2rem; /* Adjust space between text and images */
+    .intro-main {
+        font-size: 1rem; /* Adjust font size */
+        margin-top: 0; /* Remove margin to avoid pushing content */
+        text-align: center; /* Center text */
+        margin-right: 30%;
     }
 
     .p1 {
-        font-size: 0.7rem; /* Further reduce font size for paragraphs */
+        font-size: 0.7rem; /* Reduce paragraph font size */
+        text-align: center; /* Center the paragraph text */
+      
+    }
+
+    /* Ensure the figma-logo is visible */
+    .figma-logo {
+        display: block; /* Make sure it's visible */
+        width: 20px; /* Adjust size for mobile */
+        height: 40px;
+        margin-left: 0; /* Remove left margin for better alignment */
+        display: none;
     }
 }
+
 /*skills and all*/
 @media only screen and (max-width: 768px) {
     /* Skill Container */
@@ -1095,33 +1185,36 @@ a.live {
     detail {
         font-size: 10px; /* Smaller font size for mobile devices */
         padding: 10px; /* Reduced padding for mobile devices */
-        height: 40vh; /* Adjust height for smaller screens if needed */
+        height:5vh; /* Adjust height for smaller screens if needed */
+        justify-content: center; /* Horizontally center */
+        align-items: center; 
     }
 
     .myname {
+        font-size: 9px;
         padding-left: 2%; /* Reduced padding for mobile devices */
         padding-bottom: 10%; /* Adjusted padding for mobile devices */
     }
 }
 
-/* Styles for mobile screens */
-@media (max-width: 600px) {
-    .contact {
-        font-size: 12px; /* Smaller font size for mobile devices */
-        padding: 10px; /* Reduced padding for mobile devices */
-        height: auto; /* Adjust height for mobile devices if needed */
+/* Mobile screen adjustments */
+@media only screen and (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap onto new lines */
+        justify-content: center; /* Center horizontally */
+        gap: 10px; /* Add space between logos */
+        padding: 0 10px; /* Optional: Add padding for better spacing */
     }
 
-    .contact1 {
-        font-size: 12px; /* Smaller font size for mobile devices */
-        padding: 10px; /* Reduced padding for mobile devices */
-        padding-left: 2%; /* Adjusted padding for mobile devices */
-        padding-right: 3%; /* Adjusted padding for mobile devices */
+    .behance-logo, .behance-logo1, .behance-logo2, .behance-logo3, .behance-logo4, .behance-logo5 {
+        width: 48px; /* Adjust width of each logo */
+        height: 48px; /* Ensure logos are square */
+        margin-bottom: 10px; /* Space between logos vertically */
     }
 
-    .contact2 {
-        font-size: 12px; /* Smaller font size for mobile devices */
-        padding: 10px; /* Reduced padding for mobile devices */
-        padding-bottom: 5%; /* Adjusted padding for mobile devices */
+    /* Ensure only 4 logos per row */
+    .behance-logo:nth-child(4n+1) {
+        clear: left; /* After 4 logos, start a new row */
     }
 }
