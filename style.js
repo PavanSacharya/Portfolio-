@@ -1,80 +1,199 @@
-
 document.addEventListener('DOMContentLoaded', () => {
-    const image = document.querySelector('.intro-imagess');
-    let isDragging = false;
-    let startX = 0;
-
-    image.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        startX = e.pageX;
-        image.style.cursor = 'grabbing';
-        e.preventDefault();
-    });
-
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-        image.style.cursor = 'grab';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            const x = e.pageX;
-            const rotation = (x - startX) * 0.1; // Adjust rotation sensitivity
-            image.style.transform = `rotateY(${rotation}deg)`;
+    class ImageInteraction {
+        constructor(selector) {
+            this.image = document.querySelector(selector);
+            if (!this.image) return;
+            
+            this.isDragging = false;
+            this.startX = 0;
+            this.bindEvents();
         }
-    });
 
-    const imageTilt = document.querySelector('.intro-imagess');
+        bindEvents() {
+            // Use bound methods to maintain context
+            this.handleMouseDown = this.handleMouseDown.bind(this);
+            this.handleMouseUp = this.handleMouseUp.bind(this);
+            this.handleMouseMove = this.handleMouseMove.bind(this);
+            this.handleTiltEffect = this.handleTiltEffect.bind(this);
+            this.handleMouseLeave = this.handleMouseLeave.bind(this);
 
-    imageTilt.addEventListener('mousemove', (e) => {
-        const rect = imageTilt.getBoundingClientRect();
-        const x = e.clientX - rect.left; // X coordinate relative to the image
-        const y = e.clientY - rect.top; // Y coordinate relative to the image
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = (y - centerY) / centerY * -30; // Increase the -10 value to -30 for more tilt
-        const rotateY = (x - centerX) / centerX * 30; // Increase the 10 value to 30 for more tilt
+            // Add event listeners
+            this.image.addEventListener('mousedown', this.handleMouseDown);
+            document.addEventListener('mouseup', this.handleMouseUp);
+            document.addEventListener('mousemove', this.handleMouseMove);
+            this.image.addEventListener('mousemove', this.handleTiltEffect);
+            this.image.addEventListener('mouseleave', this.handleMouseLeave);
+        }
 
-        imageTilt.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
+        handleMouseDown(e) {
+            this.isDragging = true;
+            this.startX = e.pageX;
+            this.image.style.cursor = 'grabbing';
+            e.preventDefault();
+        }
 
-    imageTilt.addEventListener('mouseleave', () => {
-        imageTilt.style.transform = 'rotateX(0) rotateY(0)'; // Reset to initial state
-    });
-});
-// 3 section
-var swiper = new Swiper('.swiper-containers', {
-    pagination: '.swiper-paginations',
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflow: {
-        rotate: 20,
-        stretch: 0,
-        depth: 200,
-        modifier: 1,
-        slideShadows: true,
-    },
-    loop: true,
-});
+        handleMouseUp() {
+            this.isDragging = false;
+            this.image.style.cursor = 'grab';
+        }
 
+        handleMouseMove(e) {
+            if (!this.isDragging) return;
+            
+            const rotation = (e.pageX - this.startX) * 0.1;
+            this.applyTransform(rotation);
+        }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const gif = document.getElementById('intro-gif');
-    
-    // Function to swap the GIF source
-    function swapGif() {
-        gif.src = 'assets/square-reverse.gif'; // Swap to reversed GIF
+        handleTiltEffect(e) {
+            const rect = this.image.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -30;
+            const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 30;
+            
+            this.applyTransform(rotateY, rotateX);
+        }
+
+        handleMouseLeave() {
+            this.applyTransform(0, 0);
+        }
+
+        applyTransform(rotateY, rotateX = 0) {
+            // Use requestAnimationFrame for smooth animations
+            requestAnimationFrame(() => {
+                this.image.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+        }
+
+        destroy() {
+            this.image.removeEventListener('mousedown', this.handleMouseDown);
+            document.removeEventListener('mouseup', this.handleMouseUp);
+            document.removeEventListener('mousemove', this.handleMouseMove);
+            this.image.removeEventListener('mousemove', this.handleTiltEffect);
+            this.image.removeEventListener('mouseleave', this.handleMouseLeave);
+        }
     }
 
-    // Assuming you know the duration of the GIF in milliseconds
-    const gifDuration = 9000; // Adjust this value to match the duration of your GIF
+    class GifHandler {
+        constructor(gifId, duration = 9000) {
+            this.gif = document.getElementById(gifId);
+            this.duration = duration;
+            if (this.gif) this.init();
+        }
 
-    // Start playing the GIF
-    gif.addEventListener('load', function() {
-        // Set a timeout to wait until the GIF has likely ended
-        setTimeout(swapGif, gifDuration);
-    });
+        init() {
+            this.gif.addEventListener('load', () => {
+                setTimeout(() => {
+                    this.gif.src = 'assets/square-reverse.gif';
+                }, this.duration);
+            });
+        }
+    }
+
+    class SwiperManager {
+        constructor(containerSelector) {
+            this.containerSelector = containerSelector;
+            this.swiper = null;
+            this.resizeTimer = null;
+            this.isMobile = window.innerWidth <= 768;
+            
+            this.init();
+            this.handleResize();
+        }
+
+        get swiperBaseOptions() {
+            return {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                loop: true,
+                speed: 600,
+                coverflowEffect: {
+                    rotate: this.isMobile ? 10 : 30,
+                    stretch: 0,
+                    depth: this.isMobile ? 100 : 200,
+                    modifier: 1,
+                    slideShadows: !this.isMobile
+                },
+                on: {
+                    slideChange: () => this.updateSlideVisibility(),
+                    init: () => this.updateSlideVisibility()
+                }
+            };
+        }
+
+        get mobileOptions() {
+            return {
+                slidesPerView: 1.8,
+                spaceBetween: 10,
+                breakpoints: {
+                    320: { slidesPerView: 1.6 },
+                    480: { slidesPerView: 1.8 }
+                }
+            };
+        }
+
+        get desktopOptions() {
+            return {
+                slidesPerView: 'auto',
+                spaceBetween: 30
+            };
+        }
+
+        init() {
+            const options = {
+                ...this.swiperBaseOptions,
+                ...(this.isMobile ? this.mobileOptions : this.desktopOptions)
+            };
+
+            this.swiper = new Swiper(this.containerSelector, options);
+        }
+
+        updateSlideVisibility() {
+            if (!this.swiper || !this.swiper.slides) return;  // Guard clause to avoid undefined errors
+        
+            const { slides, activeIndex } = this.swiper;
+            
+            slides.forEach((slide, index) => {
+                const isActive = index === activeIndex;
+                const isAdjacent = Math.abs(index - activeIndex) === 1;
+        
+                Object.assign(slide.style, {
+                    opacity: isActive ? '1' : isAdjacent ? '0.6' : '0.4',
+                    transform: isActive ? 'scale(1)' : 'scale(0.85)',
+                    transition: 'all 0.3s ease'
+                });
+            });
+        }
+        
+
+        handleResize() {
+            const debouncedResize = () => {
+                clearTimeout(this.resizeTimer);
+                this.resizeTimer = setTimeout(() => {
+                    this.isMobile = window.innerWidth <= 768;
+                    if (this.swiper) {
+                        this.swiper.destroy(true, true);
+                    }
+                    this.init();
+                }, 250);
+            };
+
+            window.addEventListener('resize', debouncedResize);
+        }
+    }
+
+    // Initialize components
+    const imageInteraction = new ImageInteraction('.intro-imagess');
+    const gifHandler = new GifHandler('intro-gif');
+    const swiperManager = new SwiperManager('.swiper-containers');
+
+    // Handle touch events for mobile
+    if ('ontouchstart' in window) {
+        document.addEventListener('touchmove', (e) => {
+            if (imageInteraction.isDragging) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    }
 });
-
