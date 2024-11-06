@@ -58,7 +58,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 40%;
-    height: 5%;
+    height: 4%;
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid #fff;
     border-radius: 50px;
@@ -66,13 +66,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
 }
 
 .navbar nav {
     display: flex;
     justify-content: center;
-    width: 100%;  /* Ensure the nav spans the full width of the navbar */
+    width: 95%;  /* Ensure the nav spans the full width of the navbar */
 }
 
 .nav-list {
@@ -97,7 +97,7 @@ body {
 }
 
 .section {
-    padding: 100px 20px;
+    padding: 100px 0px;
     min-height: 50vh;
 }
 
@@ -119,6 +119,11 @@ body {
     color: #ffffff;
     gap: 8%;
     padding-bottom: 20%;
+}
+
+.pav{
+
+
 }
 
 #home .intro-left p.intro-main2 {
@@ -198,68 +203,168 @@ body {
     align-items: center;
     background: url("assets/back11.png") no-repeat center center/cover;
     background-size: cover;
-    height: 70vh;
     width: 100%;
 }
+.pav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* Image styling */
 .intro-images {
-    width: 60%;
-    height: auto;
+    max-width: 70%; /* Optional: Ensure the image is responsive */
     border-radius: 5px;
-    margin-left: 15%;
 }
 /* 3rd section */
-
-.section-about {
+/* CSS Custom Properties for consistent theming */
+:root {
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-display: 'Audiowide', sans-serif;
+    --color-text: #000;
+    --color-text-light: #fff;
+    --spacing-base: clamp(10px, 2vw, 20px);
+    --section-padding: clamp(10px, 4vw, 20px);
+    --container-width: min(80vh, 100%);
+    --slide-size: clamp(250px, 60vw, 500px);
+    --heading-size: clamp(1.5rem, 5vw, 3rem);
+    
+    /* Transitions */
+    --transition-standard: 0.3s ease;
+  }
+  
+  /* Base Styles */
+  .section-about {
     background: url("assets/back111.png");
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: var(--font-primary);
     font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+    color: var(--color-text);
+    min-height: 100vh;
+    
+    /* Modern Layout */
     display: flex;
-    flex-direction: column; /* Arrange children vertically */
-    justify-content: flex-start; /* Align children to the top */
-    align-items: center; /* Center children horizontally */
-}
-
-.swiper-containers {
-    width: 80vh; /* Set the width to 100% of the parent container */
-    height: 80vh; /* Set the height to 80% of the viewport height */
-    padding-top: 50px;
-}
-
-.swiper-slide {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--section-padding);
+    margin: 0;
+    box-sizing: border-box;
+    
+    /* Performance Optimization */
+    background-size: cover;
+    background-attachment: fixed;
+    will-change: transform;
+    
+    /* Prevent overflow issues */
+    overflow-x: hidden;
+  }
+  
+  /* Swiper Container */
+  .swiper-containers {
+    width: var(--container-width);
+    height: var(--container-width);
+    padding-top: var(--spacing-base);
+    max-height: calc(100vh - 150px);
+    position: relative;
+    
+    /* Center alignment */
+    margin: 0 auto;
+    
+    /* Hardware acceleration */
+    transform: translateZ(0);
+  }
+  
+  /* Swiper Slides */
+  .swiper-slide {
     background-position: center;
-    background-size: contain; /* Ensure the entire image is visible */
-    background-repeat: no-repeat; /* Prevent repetition of the image */
-    width: 500px;
-    height: 500px;
-}
-
-/*text style*/
-.intro-left1 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: var(--slide-size);
+    height: var(--slide-size);
+    
+    /* Smooth transitions */
+    transition: transform var(--transition-standard),
+                opacity var(--transition-standard);
+    will-change: transform, opacity;
+    
+    /* Prevent text selection */
+    webkit-user-select: none;
+    -webkit-user-drag: none;
+  }
+  
+  /* Header Section */
+  .intro-left1 {
     width: 100%;
     display: flex;
-    /*justify-content: center; /* Center the text horizontally */
-    align-items: center; /* Align the text vertically at the top */
-    margin-bottom: 20px; /* Space between the text and the swiper container */
-    padding-top: 1%;
-    padding-left: 4%;
-    padding-right: 9%;
-}
-
-.intro-left1 h1.intro-main {
-    font-family: 'Audiowide', sans-serif;
-    font-size: 3rem; /* Adjust font size as needed */
-    margin: 0;
-    color: #ffffff;
+    align-items: center;
+    margin-bottom: var(--spacing-base);
+    padding: 1% 4% 0;
+  }
+  
+  /* Main Heading */
+  .intro-left1 h1.intro-main {
+    font-family: var(--font-display);
+    font-size: var(--heading-size);
+    color: var(--color-text-light);
     font-style: oblique;
-    padding-left: 15%;
-    text-decoration:underline;
-}
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    
+    /* Improve text rendering */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .swiper-containers {
+      height: auto;
+      padding-top: calc(var(--spacing-base) * 2);
+    }
+    
+    .swiper-slide {
+      /* Use CSS custom properties for responsive sizing */
+      width: 80% !important; /* Important needed for Swiper override */
+      height: clamp(250px, 40vh, 300px) !important;
+    }
+  }
+  
+  /* Active/Inactive Slide States */
+  @media screen and (max-width: 768px) {
+    .swiper-slide {
+      opacity: 0.4;
+      transform: scale(0.85);
+      transition: all var(--transition-standard);
+    }
+  
+    .swiper-slide-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+  
+    .swiper-slide-prev,
+    .swiper-slide-next {
+      opacity: 0.6;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .section-about {
+      background: none;
+      min-height: auto;
+    }
+    
+    .swiper-containers {
+      display: none;
+    }
+    
+    .intro-left1 h1.intro-main {
+      color: var(--color-text);
+      text-decoration: none;
+    }
+  }
 /*4th section*/
 
 .section-projectsimages {
@@ -343,7 +448,7 @@ body {
 .intro-left1 {
     text-align: center; /* Center text horizontally */
     margin-bottom: 10px; /* Space between the heading and the portfolio section */
-    padding-left: 30%
+    padding-left: 0%
     
     
 }
@@ -497,13 +602,7 @@ a.live {
 
 
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .abouts {
-        padding: 0 5%; /* Adjust padding for smaller screens */
-        margin-top: 30%;
-    }
-}
+
 
 /* About Heading */
 .abouts h1.intro-main1 {
@@ -520,7 +619,7 @@ a.live {
 
 /* Figma Logo */
 .abouts h1.intro-main1 .figma-logo {
-    height: 120px; /* Adjust logo size as needed */
+    height: 100px; /* Adjust logo size as needed */
     width: auto; /* Maintain aspect ratio */
 }
 
@@ -678,7 +777,7 @@ a.live {
         height: 3%; /* 50% of viewport height */
         display: flex; /* Ensure flex properties work */
         align-items: flex-start; /* Align items to the top */
-        padding: 20px; /* Optional: Add padding for internal spacing */
+        padding: 0px; /* Optional: Add padding for internal spacing */
         margin: 0; /* Remove any margin */
         box-sizing: border-box; /* Include padding in element's total width and height */
         align-items: flex-start; 
@@ -881,17 +980,17 @@ a.live {
     }
 
     .nav-list li {
-        margin: 0.3rem;
+        margin: 0.2rem;
     }
 
     .nav-list li a {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.9rem;
+        padding: 0.1rem 0.2rem;
+        font-size: 0.8rem;
     }
 
     .section-intro {
         height: auto;
-        padding: 60px 15px;
+        padding: 60px 0px;
     }
 
     .intro-left {
@@ -910,7 +1009,7 @@ a.live {
 
     #home .intro-left h1.intro-main {
         font-size: 90%;
-        padding-left: 5%;
+        padding-left: 0%;
         white-space: normal;
     }
 
@@ -932,7 +1031,7 @@ a.live {
 
     .intro-left1 h1.intro-main {
         font-size: 2rem;
-        padding-left: 5%;
+        padding-left: 0%;
     }
 
     .section-projectsimages {
@@ -1014,7 +1113,7 @@ a.live {
     }
 
     .contact, .contact1, .contact2 {
-        padding: 15px;
+        padding: 0px;
         height: auto;
     }
 
