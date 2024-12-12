@@ -58,7 +58,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 40%;
-    height: 4%;
+    height: 5%;
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid #fff;
     border-radius: 50px;
@@ -66,13 +66,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.3rem 0;
+    padding: 0.5rem 0;
 }
 
 .navbar nav {
     display: flex;
     justify-content: center;
-    width: 95%;  /* Ensure the nav spans the full width of the navbar */
+    width: 100%;  /* Ensure the nav spans the full width of the navbar */
 }
 
 .nav-list {
@@ -97,7 +97,7 @@ body {
 }
 
 .section {
-    padding: 100px 0px;
+    padding: 100px 20px;
     min-height: 50vh;
 }
 
@@ -119,11 +119,6 @@ body {
     color: #ffffff;
     gap: 8%;
     padding-bottom: 20%;
-}
-
-.pav{
-
-
 }
 
 #home .intro-left p.intro-main2 {
@@ -196,157 +191,75 @@ body {
     transition: transform 0.2s ease; /* Smooth transition for the rotation */
 }
 
-
-/* 3rd section */
-/* CSS Custom Properties for consistent theming */
-:root {
-    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-display: 'Audiowide', sans-serif;
-    --color-text: #000;
-    --color-text-light: #fff;
-    --spacing-base: clamp(10px, 2vw, 20px);
-    --section-padding: clamp(10px, 4vw, 20px);
-    --container-width: min(80vh, 100%);
-    --slide-size: clamp(250px, 60vw, 500px);
-    --heading-size: clamp(1.5rem, 5vw, 3rem);
-    
-    /* Transitions */
-    --transition-standard: 0.3s ease;
-  }
-  
-  /* Base Styles */
-  .section-about {
-    background: url("assets/back111.png");
-    font-family: var(--font-primary);
-    font-size: 14px;
-    color: var(--color-text);
-    min-height: 100vh;
-    
-    /* Modern Layout */
+/* Main section styling */
+.section-main {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding: var(--section-padding);
-    margin: 0;
-    box-sizing: border-box;
-    
-    /* Performance Optimization */
+    background: url("assets/back11.png") no-repeat center center/cover;
     background-size: cover;
-    background-attachment: fixed;
-    will-change: transform;
-    
-    /* Prevent overflow issues */
-    overflow-x: hidden;
-  }
-  
-  /* Swiper Container */
-  .swiper-containers {
-    width: var(--container-width);
-    height: var(--container-width);
-    padding-top: var(--spacing-base);
-    max-height: calc(90vh - 150px);
-    position: relative;
-    
-    /* Center alignment */
-    margin: 0 auto;
-    
-    /* Hardware acceleration */
-    transform: translateZ(0);
-  }
-  
-  /* Swiper Slides */
-  .swiper-slide {
+    height: 70vh;
+    width: 100%;
+}
+
+/* Image styling */
+.intro-images {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
+    margin-left: 15%;
+}
+/* 3rd section */
+
+.section-about {
+    background: url("assets/back111.png");
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: flex-start; /* Align children to the top */
+    align-items: center; /* Center children horizontally */
+}
+
+.swiper-containers {
+    width: 80vh; /* Set the width to 100% of the parent container */
+    height: 80vh; /* Set the height to 80% of the viewport height */
+    padding-top: 50px;
+}
+
+.swiper-slide {
     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: var(--slide-size);
-    height: var(--slide-size);
-    
-    /* Smooth transitions */
-    transition: transform var(--transition-standard),
-                opacity var(--transition-standard);
-    will-change: transform, opacity;
-    
-    /* Prevent text selection */
-    webkit-user-select: none;
-    -webkit-user-drag: none;
-  }
-  
-  /* Header Section */
-  .intro-left1 {
+    background-size: contain; /* Ensure the entire image is visible */
+    background-repeat: no-repeat; /* Prevent repetition of the image */
+    width: 500px;
+    height: 500px;
+}
+
+/*text style*/
+.intro-left1 {
     width: 100%;
     display: flex;
-    align-items: center;
-    margin-bottom: var(--spacing-base);
-    padding: 1% 4% 0;
-  }
-  
-  /* Main Heading */
-  .intro-left1 h1.intro-main {
-    font-family: var(--font-display);
-    font-size: var(--heading-size);
-    color: var(--color-text-light);
-    font-style: oblique;
-    text-decoration: underline;
-    text-align: center;
-    width: 100%;
+    /*justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Align the text vertically at the top */
+    margin-bottom: 20px; /* Space between the text and the swiper container */
+    padding-top: 1%;
+    padding-left: 4%;
+    padding-right: 9%;
+}
+
+.intro-left1 h1.intro-main {
+    font-family: 'Audiowide', sans-serif;
+    font-size: 3rem; /* Adjust font size as needed */
     margin: 0;
-    
-    /* Improve text rendering */
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    .swiper-containers {
-      height: auto;
-      padding-top: calc(var(--spacing-base) * 2);
-    }
-    
-    .swiper-slide {
-      /* Use CSS custom properties for responsive sizing */
-      width: 80% !important; /* Important needed for Swiper override */
-      height: clamp(250px, 40vh, 300px) !important;
-    }
-  }
-  
-  /* Active/Inactive Slide States */
-  @media screen and (max-width: 768px) {
-    .swiper-slide {
-      opacity: 0.4;
-      transform: scale(0.85);
-      transition: all var(--transition-standard);
-    }
-  
-    .swiper-slide-active {
-      opacity: 1;
-      transform: scale(1);
-    }
-  
-    .swiper-slide-prev,
-    .swiper-slide-next {
-      opacity: 0.6;
-    }
-  }
-  
-  /* Print Styles */
-  @media print {
-    .section-about {
-      background: none;
-      min-height: auto;
-    }
-    
-    .swiper-containers {
-      display: none;
-    }
-    
-    .intro-left1 h1.intro-main {
-      color: var(--color-text);
-      text-decoration: none;
-    }
-  }
+    color: #ffffff;
+    font-style: oblique;
+    padding-left: 15%;
+    text-decoration:underline;
+}
 /*4th section*/
 
 .section-projectsimages {
@@ -383,7 +296,6 @@ body {
     font-style: oblique;
     margin: 0; /* Remove default margins */
     text-align: left; /* Align text to the left */
-    padding-left: 4%;
 }
 
 .image-section {
@@ -430,7 +342,7 @@ body {
 .intro-left1 {
     text-align: center; /* Center text horizontally */
     margin-bottom: 10px; /* Space between the heading and the portfolio section */
-    padding-left: 0%
+    padding-left: 30%
     
     
 }
@@ -551,18 +463,7 @@ a.live {
     justify-content: space-between; /* Space between text and image */
     
 }
-/*dummy*/
-.dummy{
-    background: url("assets/back111.png");
 
-    margin: 0;
-    padding: 0;
-    height: 10vh;
-    display: flex;
-
-   
-
-}
 
 /* About Section */
 .about_sections {
@@ -572,7 +473,7 @@ a.live {
     color: #000;
     margin: 0;
     padding: 0;
-    height: 130vh;
+    height: 50%;
     display: flex;
     flex-direction: column; /* Align content in a column */
     align-items: center; /* Center items horizontally */
@@ -584,7 +485,13 @@ a.live {
 
 
 
-
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .abouts {
+        padding: 0 5%; /* Adjust padding for smaller screens */
+        margin-top: 30%;
+    }
+}
 
 /* About Heading */
 .abouts h1.intro-main1 {
@@ -601,14 +508,13 @@ a.live {
 
 /* Figma Logo */
 .abouts h1.intro-main1 .figma-logo {
-    height: 100px; /* Adjust logo size as needed */
+    height: 120px; /* Adjust logo size as needed */
     width: auto; /* Maintain aspect ratio */
 }
 
 /* About Paragraph */
 .p1 {
-    font-size: 1.7em;
-    margin: 20px 0; /* Added some margin for better spacing */
+    font-size: 1.5em;
     color: #EEEDEB;
     text-align: center; /* Center text horizontally */
     margin-left: 10%;
@@ -622,29 +528,18 @@ a.live {
     justify-content: center; /* Center the skill buttons horizontally */
     gap: 20px;
     width: 100%; /* Take up full width */
-    height: 30%;
+    height: 20%;
     margin-top: 20px; /* Add space above the skill container */
     padding: 20px; /* Add padding around the container */
     
 }
 
-.skill-container1 {
-    display: flex;
-    justify-content: center; /* Center the skill buttons horizontally */
-    gap: 20px;
-    width: 100%; /* Take up full width */
-    height: 30%;
-    margin-top: -25px; /* Add space above the skill container */
-    padding: 20px; /* Add padding around the container */
-    
-}
 .skill-container2 {
     display: flex;
     justify-content: center; /* Center the skill buttons horizontally */
     gap: 20px;
     width: 100%; /* Take up full width */
-    height: 30%;
-    margin-top: -65px; /* Add space above the skill container */
+    height: 20%;
     padding: 20px; /* Add padding around the container */
     
 }
@@ -654,22 +549,11 @@ a.live {
     justify-content: center; /* Center the skill buttons horizontally */
     gap: 20px;
     width: 100%; /* Take up full width */
-    height: 30%;
-    margin-top: -100px; /* Add space above the skill container */
+    height: 20%;
     padding: 20px; /* Add padding around the container */
     
 }
 
-.skill-container4 {
-    display: flex;
-    justify-content: center; /* Center the skill buttons horizontally */
-    gap: 20px;
-    width: 100%; /* Take up full width */
-    height: 30%;
-    margin-top: -130px; /* Add space above the skill container */
-    padding: 20px; /* Add padding around the container */
-    
-}
 
 
 /* Skill Button */
@@ -710,7 +594,7 @@ a.live {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
-    height: 50vh; /* 50% of viewport height */
+    height: 47vh; /* 50% of viewport height */
     display: flex; /* Ensure flex properties work */
     align-items: flex-start; /* Align items to the top */
     padding: 20px; /* Optional: Add padding for internal spacing */
@@ -756,10 +640,10 @@ a.live {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 14px;
         color: #000;
-        height: 3%; /* 50% of viewport height */
+        height: 2%; /* 50% of viewport height */
         display: flex; /* Ensure flex properties work */
         align-items: flex-start; /* Align items to the top */
-        padding: 0px; /* Optional: Add padding for internal spacing */
+        padding: 10px; /* Optional: Add padding for internal spacing */
         margin: 0; /* Remove any margin */
         box-sizing: border-box; /* Include padding in element's total width and height */
         align-items: flex-start; 
@@ -800,7 +684,8 @@ a.live {
         padding-bottom: 8%;
 
     }
-
+    
+    
     section {
         display: flex;
         justify-content: center; /* Center horizontally */
@@ -874,245 +759,428 @@ a.live {
 
        /** responsive mobile phone */
   
- /* Tablet Styles (768px to 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+   /** responsive mobile phone */
+/* Mobile screen styles */
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media queries for screens up to 768px (Tablets and Mobile Phones) */
+@media (max-width: 768px) {
+    .section-main {
+        background-size: cover;
+        height: 60vh; /* Adjust the height to fit smaller screens */
+        padding: 0; /* Add padding to prevent content from sticking to edges */
+    }
+
+    .intro-left, .intro-right {
+        text-align: center; /* Center content on smaller screens */
+        padding: 0; /* Remove padding for mobile */
+    }
+
+    .intro-left h1, .intro-left p {
+        font-size: 1.5rem; /* Adjust font size for readability */
+    }
+
+    .intro-images {
+        width: 80%; /* Reduce image width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
     .navbar {
-        width: 80%;
-        top: 2%;
+        width: 90%; /* Stretch navbar to fit screen */
+        height: auto;
     }
 
     .nav-list li {
         margin: 0 0.5rem;
     }
 
-    .section-intro {
-        height: 70vh;
+    .nav-list li a {
+        font-size: 1rem; /* Reduce text size */
+    }
+
+    .section-intro, .section-main {
+        background-size: cover; /* Ensure background covers the entire section on mobile */
+        width: 100%; /* Ensure full width */
     }
 
     .intro-left {
-        font-size: 2rem;
-        margin-left: 5%;
+        padding: 1rem; /* Adjust padding for mobile */
+        font-size: 1.5rem; /* Adjust font size for mobile */
     }
 
-    #home .intro-left p.intro-main2 {
-        font-size: 100%;
-        padding-top: 35%;
-    }
-
-    .intro-imagess {
-        height: 50%;
-        width: 70%;
-    }
-
-    .swiper-containers {
-        width: 60vh;
-        height: 60vh;
-    }
-
-    .portfolio {
-        gap: 15px;
-        padding: 20px 5px;
-    }
-
-    .container {
-        max-width: 250px;
-    }
-
-    .section-project {
-        height: auto;
-        padding: 50px 0;
-    }
-
-    .p1 {
-        font-size: 1.8em;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .skill-container, 
-    .skill-container1, 
-    .skill-container2, 
-    .skill-container3, 
-    .skill-container4 {
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: -15px;
-    }
-
-    .skill-button {
-        padding: 8px 16px;
-    }
-
-    .skill-button span {
-        font-size: 14px;
+    /* Styles for the main element */
+    main {
+        width: 100%; /* Full width on mobile phones */
+        padding: 0; /* Remove padding for consistency */
+        height: auto; /* Let height adjust to content on mobile */
     }
 }
 
-/* Mobile Styles (up to 767px) */
-@media screen and (max-width: 767px) {
+
+
+/*navigation bar*/
+@media only screen and (max-width: 768px) {
     .navbar {
-        width: 90%;
-        top: 2%;
-        padding: 0.3rem 0;
+        width: 50%; /* Make the navbar span the full width of the screen */
+        top:1.5; /* Position the navbar at the top */
+        height: 3%; /* Adjust height based on content */
+        padding: 0.2rem; /* Add padding */
+        border-radius:0%; /* Remove border-radius for a simpler look */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        white-space: nowrap; /* Prevent wrapping of navbar items */
+        margin: 0 0.5rem;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-direction: row; /* Align items horizontally */
+        width: 2%; /* Adjust width based on content */
+        align-items: center; /* Center items vertically */
     }
 
     .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: flex; /* Keep list items in a row */
+        flex-direction: row; /* Align items horizontally */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        white-space:0.5px; /* Prevent wrapping of list items */
     }
 
     .nav-list li {
-        margin: 0.2rem;
+        margin: 0 0.2rem; /* Adjust margin for spacing */
     }
 
     .nav-list li a {
-        padding: 0.1rem 0.2rem;
-        font-size: 0.8rem;
+        display:block; /* Make links block elements for better touch targets */
+        padding: 0.2rem 0.65rem; /* Adjust padding for smaller screens */
+        font-size: 0.4rem; /* Reduce font size for smaller screens */
+        padding: 0rem;
     }
+}
 
+/* first  page*/
+
+@media only screen and (max-width: 768px) {
     .section-intro {
-        height: auto;
-        padding: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 60vh;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
     }
 
-    .intro-left {
-        font-size: 1.5rem;
-        margin-left: 0;
-        text-align: center;
-        padding-bottom: 10%;
+
+    .intro-left, .intro-right {
+        width: 100%;
+        margin-bottom: 10rem; /* Add margin between sections */
+        align-items:center;
     }
 
-    #home .intro-left p.intro-main2 {
-        font-size: 90%;
-        padding-top: 25%;
-        padding-left: 5%;
-        line-height: normal;
+   
+
+/* Specific styles for font sizes */
+.intro-main2 {
+    font-size: 0.7rem !important; /* Font size for mobile */
+  align-items: center;
+}
+
+.intro-main {
+    font-size: 0.9rem !important; /* Font size for mobile */
+    justify-content: center;
+    margin-left: 9%;
+    align-items: center;
+ 
+   
+
+}
+
+.intro-details {
+    font-size: 0.5rem !important; /* Font size for mobile */
+    align-items: center;
+   
+}
+
+    
+    /* Styles for mobile screens */
+    @media only screen and (max-width: 768px) {
+        .intro-right {
+            display: none; /* Hide the image container on mobile */
+        }
+    }
+}
+
+/*dummy image*/
+@media only screen and (max-width: 768px) {
+    .section-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Make the section take full width */
+        height: 60vh;
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
     }
 
-    #home .intro-left h1.intro-main {
-        font-size: 90%;
-        padding-left: 0%;
-        white-space: normal;
+    .section-main .section {
+        width: 100%; /* Ensure the inner container spans the full width */
+        text-align: center; /* Center the content within the section */
+        padding: 0; /* Remove any inner padding */
     }
 
-    .intro-imagess {
-        height: 40%;
-        width: 80%;
-        padding-bottom: 10%;
+    .intro-images {
+        width: 50%; /* Reduce the image size on mobile screens */
+        max-width: 200px; /* Limit the maximum width of the image */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image within its container */
     }
+}
 
+/*posterimage*/
+
+@media only screen and (max-width: 768px) {
     .section-about {
-        height: auto;
-        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Make the section take full width */
+        height: 60vh;
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
+    }
+
+    .intro-left1 {
+        text-align: center; /* Center the text container */
+    
+        
+    }
+
+     .intro-main {
+        font-size: 1rem; /* Set a smaller font size for mobile devices */
+        line-height: 1.2; /* Adjust line height for better readability */
     }
 
     .swiper-containers {
-        width: 40vh;
-        height: 40vh;
+        width: 100%;
+        max-width: 70%;
+        overflow: hidden; /* Ensure no overflow outside the container */
     }
 
-    .intro-left1 h1.intro-main {
-        font-size: 2rem;
-        padding-left: 0%;
+    .swiper-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
     }
 
+    .swiper-slide {
+        width: 90%; /* Make the slides take up most of the screen width */
+        height: auto; /* Let height adjust automatically */
+        background-size: contain; /* Contain the image within the slide */
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+    }
+
+    .swiper-paginations {
+        margin-top: 1rem;
+    }
+}
+/*dummy image*/
+/* Styles for mobile screens */
+@media only screen and (max-width: 768px) {
     .section-projectsimages {
-        flex-direction: column;
-        height: auto;
-        padding: 30px 15px;
+        padding: 1rem; /* Reduce padding for mobile */
+        height: 100vh; 
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
+    }
+
+    .content-wrapper {
+        width: 100%; /* Full width for mobile screens */
+        padding: 0; /* Remove padding for mobile screens */
+    }
+
+    .text-section {
+        margin-bottom: 0.5rem; /* Reduce space below the text section */
+    }
+
+    .image-section {
+        width: 100%; /* Full width for the image section */
     }
 
     .intro-images2 {
-        width: 80%;
-        height: auto;
-        margin: 20px auto;
+        width: 50%; /* Make the image fit within the container */
+        max-width: 50%; /* Ensure the image doesn't exceed the container width */
+        height: 30%;
     }
+}
 
+/*projetc*/
+
+/* Styles for mobile screens */
+@media only screen and (max-width: 768px) {
     .section-project {
-        height: auto;
-        padding: 40px 15px;
-    }
-
-    .portfolio {
-        gap: 20px;
-        padding: 20px 10px;
+        display: flex;
+        align-items: center; /* Center containers horizontally */;
+        display: flex;
+        justify-content: center; /* Centers items horizontally */
+        align-items: center;
     }
 
     .container {
-        max-width: 100%;
-        margin: 0 10px;
+        flex: 3 3 20%; /* Each container takes full width on mobile */
+        max-width: 30%; /* Ensure container does not exceed viewport width */
+        margin-bottom: 1rem; /* Add space below each container */
+    }
+    h2 {
+        font-size: 1em;
+        margin: 10px 0;
+        color: #EEEDEB;
+    }
+    
+    p {
+        font-size: 0.6em;
+        margin: 10px 0;
+        color: #EEEDEB;
+    }
+    
+    .tags {
+        margin: 8px 0;
     }
 
+    /* Hide all containers except the first three */
+    .container:nth-of-type(n+5) {
+        display: none; /* Hide all containers starting from the 4th one */
+    }
+}
+
+/*dumy*/
+@media only screen and (max-width: 768px) {
+    .dummy {
+        height: -100%;
+        display: none;
+       
+    }
+}
+
+/* General mobile styles */
+@media only screen and (max-width: 768px) {
     .about_sections {
-        height: auto;
-        padding: 40px 15px;
+        padding: 0rem; /* Adjust padding */
+        height: 20%;
+        display: flex;
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+    }
+
+    .intro-main {
+        font-size: 1rem; /* Adjust font size */
+        margin-top: 0; /* Remove margin to avoid pushing content */
+        text-align: center; /* Center text */
+        margin-right: 30%;
     }
 
     .p1 {
-        font-size: 1.5em;
-        margin: 15px 5%;
+        font-size: 0.7rem; /* Reduce paragraph font size */
+        text-align: center; /* Center the paragraph text */
+      
     }
 
-    .skill-container, 
-    .skill-container1, 
-    .skill-container2, 
-    .skill-container3, 
+    /* Ensure the figma-logo is visible */
+    .figma-logo {
+        display: block; /* Make sure it's visible */
+        width: 20px; /* Adjust size for mobile */
+        height: 40px;
+        margin-left: 0; /* Remove left margin for better alignment */
+        display: none;
+    }
+}
+
+/*skills and all*/
+@media only screen and (max-width: 768px) {
+    /* Skill Container */
+    .skill-container,
+    .skill-container1,
+    .skill-container2,
+    .skill-container3,
     .skill-container4 {
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: -10px;
-        justify-content: center;
+        flex-direction: column; /* Stack skill buttons vertically */
+        gap: 15px; /* Reduce the gap between buttons */
+        height: auto; /* Adjust the height to fit content */
+        width: 80%; /* Make the container smaller */
+        margin: 10px auto; /* Center the container */
+        padding: 10px; /* Reduce padding for mobile */
     }
 
+    /* Skill Button */
     .skill-button {
-        padding: 6px 12px;
+        padding: 8px 15px; /* Reduce padding */
+        border-radius: 20px; /* Slightly smaller border-radius */
+        transition: border-color 0.3s;
     }
 
-    .skill-button span {
-        font-size: 12px;
-    }
-
+    /* Skill Button Logo */
     .skill-button img {
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px; /* Smaller icon size for mobile */
     }
 
-    .detail {
-        height: auto;
-        padding: 30px 15px;
+    /* Skill Button Text */
+    .skill-button span {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}
+
+
+/* Styles for mobile screens */
+@media (max-width: 600px) {
+    detail {
+        font-size: 10px; /* Smaller font size for mobile devices */
+        padding: 10px; /* Reduced padding for mobile devices */
+        height:5vh; /* Adjust height for smaller screens if needed */
+        justify-content: center; /* Horizontally center */
+        align-items: center; 
     }
 
-    .myname p {
-        font-size: 2em;
+    .myname {
+        font-size: 9px;
+        padding-left: 2%; /* Reduced padding for mobile devices */
+        padding-bottom: 10%; /* Adjusted padding for mobile devices */
+    }
+}
+
+/* Mobile screen adjustments */
+@media only screen and (max-width: 768px) {
+    .content {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to wrap onto new lines */
+        justify-content: center; /* Center horizontally */
+        gap: 10px; /* Add space between logos */
+        padding: 0 10px; /* Optional: Add padding for better spacing */
     }
 
-    .myname p1 {
-        font-size: 1.2em;
+    .behance-logo, .behance-logo1, .behance-logo2, .behance-logo3, .behance-logo4, .behance-logo5 {
+        width: 48px; /* Adjust width of each logo */
+        height: 48px; /* Ensure logos are square */
+        margin-bottom: 10px; /* Space between logos vertically */
     }
 
-    .myname p2 {
-        font-size: 0.9em;
-    }
-
-    .contact, .contact1, .contact2 {
-        padding: 0px;
-        height: auto;
-    }
-
-    .intro-left2 {
-        font-size: 1.2rem;
-        margin-left: 0;
-        padding-left: 5%;
-    }
-
-    .behance-logo, 
-    .behance-logo1, 
-    .behance-logo2, 
-    .behance-logo3, 
-    .behance-logo4, 
-    .behance-logo5 {
-        width: 35px;
-        height: 35px;
-        padding-top: 5%;
+    /* Ensure only 4 logos per row */
+    .behance-logo:nth-child(4n+1) {
+        clear: left; /* After 4 logos, start a new row */
     }
 }
