@@ -196,25 +196,7 @@ body {
     transition: transform 0.2s ease; /* Smooth transition for the rotation */
 }
 
-/* Main section styling */
-.section-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("assets/back11.png") no-repeat center center/cover;
-    background-size: cover;
-    width: 100%;
-}
-.pav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.intro-images {
-    max-width: 70%; /* Optional: Ensure the image is responsive */
-    border-radius: 5px;
-}
 /* 3rd section */
 /* CSS Custom Properties for consistent theming */
 :root {
@@ -263,7 +245,7 @@ body {
     width: var(--container-width);
     height: var(--container-width);
     padding-top: var(--spacing-base);
-    max-height: calc(100vh - 150px);
+    max-height: calc(90vh - 150px);
     position: relative;
     
     /* Center alignment */
@@ -625,7 +607,7 @@ a.live {
 
 /* About Paragraph */
 .p1 {
-    font-size: 2.1em;
+    font-size: 1.7em;
     margin: 20px 0; /* Added some margin for better spacing */
     color: #EEEDEB;
     text-align: center; /* Center text horizontally */
