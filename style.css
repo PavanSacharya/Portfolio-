@@ -257,6 +257,7 @@ body {
     margin: 0;
     color: #ffffff;
     font-style: oblique;
+    padding-left: 15%;
     text-decoration:underline;
 }
 /*4th section*/
@@ -685,6 +686,7 @@ a.live {
     }
     
     
+    
     section {
         display: flex;
         justify-content: center; /* Center horizontally */
@@ -918,6 +920,81 @@ html, body {
         .intro-right {
             display: none; /* Hide the image container on mobile */
         }
+    }
+}
+/* General Mobile Screen Adjustments */
+@media (max-width: 768px) {
+    /* Poster Section */
+    #poster {
+        width: 100%;
+        padding: 1rem; /* Add padding to prevent content from touching edges */
+        box-sizing: border-box;
+    }
+
+    .section-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    /* Heading Adjustments */
+    .intro-left1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1.5rem; /* Add space below heading */
+    }
+
+    .intro-main {
+        font-size: 1.6rem; /* Resize the main heading for mobile */
+        margin: 0;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+
+    /* Swiper Container Adjustments */
+    .swiper-containers {
+        width: 100%;
+        height: 250px; /* Adjust height for better mobile scaling */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        transition: transform 0.3s ease-in-out; /* Smooth transition for swipes */
+    }
+
+    .swiper-slide {
+        width: 100%;
+        height: 100%;
+        background-size: cover; /* Ensure background images cover the slide */
+        background-position: center;
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    /* Pagination Adjustments */
+    .swiper-paginations {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .swiper-paginations .swiper-pagination-bullet {
+        background-color: rgba(255, 255, 255, 0.6); /* Light color for bullets */
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .swiper-paginations .swiper-pagination-bullet-active {
+        background-color: #007bff; /* Active bullet color */
     }
 }
 
