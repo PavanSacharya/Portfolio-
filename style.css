@@ -758,11 +758,11 @@ a.live {
     }
 
 
-       /** responsive mobile phone */
-  
-   /** responsive mobile phone */
-/* Mobile screen styles */
-/* Prevent horizontal overflow */
+/* ===========================
+    Responsive Code
+     =========================== */
+
+      
 html, body {
     overflow-x: hidden;
     margin: 0;
